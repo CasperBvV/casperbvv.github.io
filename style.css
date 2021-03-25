@@ -1,0 +1,46 @@
+:root {
+    --titlebar-height: 70px;
+    --menubar-height: 50px;
+    --totalbar-height: calc( var(--titlebar-height) + var(--menubar-height) )
+}
+
+
+body {
+    margin: 0;
+    font: 100% / 1.5 Arial;
+}
+
+.menubar, .titlebar {
+    padding: 0 50px;
+}
+
+.menubar {
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    height: var(--menubar-height);
+}
+
+.menubar > button {
+    height: 40px;
+    margin: 5px 10px;
+    padding: 1px 10px;
+    background-color: transparent;
+    border: transparent;
+}
+
+
+.titlebar {
+    position: sticky;
+    top: 0;
+    height: var(--titlebar-height);
+    background-color: rgb(255, 255, 255);
+}
+.titlebar > h1 {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+    line-height: var(--titlebar-height);
+}
