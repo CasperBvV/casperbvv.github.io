@@ -1,0 +1,61 @@
+.background-section {
+    text-align: center;
+    height: calc(100vh - var(--totalbar-height) );
+    background-color: rgba(0, 0, 0, .3);
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+.background-section > div {
+    font-weight: bold;
+    font-size: min(10vw, 70px);
+    color: white;
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+}
+
+.grid {
+    height: 100vh;
+    background-color: white;
+    padding: 80px 0;
+    padding-left: 5%;
+
+    display: grid;
+    grid: auto / 30% 30% 30%;
+    grid-gap: 2.5%;
+}
+.card {
+    background-color: black;
+    padding: 0;
+}
+.card > .img {
+    height: 150px;
+    background-color: red;
+}
+.card > .text{
+    margin: 25px;
+    background-color: black;
+    color: white;
+}
+.card > .text > h1 {
+    font-weight: normal;
+}
+
+.devider {
+    margin: 10px 0;
+    border-top: 1px solid white;
+}
+
+.parallax__layer--back {
+    margin-top: calc(var(--totalbar-height) - 15px);
+    width: 100vw;
+    transform: translateZ(-2px) scale(3);
+}
+
+.parallax__layer--back > img {
+    min-width: 100vw;
+    min-height: 100vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

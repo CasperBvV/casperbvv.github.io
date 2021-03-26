@@ -17,38 +17,3 @@
 .parallax__layer--base {
     transform: translateZ(0);
 }
-
-.background-section {
-    text-align: center;
-    height: calc(100vh - var(--totalbar-height) );
-    background-color: rgba(0, 0, 0, .3);
-    width: 100vw;
-    display: table-cell;
-    vertical-align: middle;
-}
-.background-section > div {
-    font-weight: bold;
-    font-size: min(10vw, 70px);
-    color: white;
-    margin: 0;
-    display: inline;
-    vertical-align: middle;
-}
-
-.after-background {
-    height: 100vh;
-    background-color: white;
-}
-
-.parallax__layer--back {
-    margin-top: calc(var(--totalbar-height) - 15px);
-    width: 100vw;
-    transform: translateZ(-2px) scale(3);
-}
-
-.parallax__layer--back > img {
-    min-width: 100vw;
-    min-height: 100vh;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
