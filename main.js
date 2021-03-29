@@ -1,7 +1,15 @@
 var pages = [];
 pages['home'] = 'Home';
-pages['over'] = 'Over Mij';
+pages['over'] = 'Over';
 
+document.getElementById('loading').style.display = 'block';
+window.onload = function() {
+    document.getElementById('loading').style.transition = 'ease-in-out 500ms';
+    document.getElementById('loading').style.opacity = '0';
+    setTimeout(function() {
+        document.getElementById('loading').style.display = 'none';
+    }, 500);
+};
 
 function page(doc) {
     if (document.location.pathname != '/' + doc) {;
@@ -14,7 +22,7 @@ function page(doc) {
     
 
     }
-}
+};
 
 window.onpopstate = function(event) {
     if(document.location.pathname.slice(-1) == '/') {
@@ -40,4 +48,4 @@ window.onpopstate = function(event) {
     setTimeout( function() {
         document.getElementById('page').style.opacity = 1;
     }, 500);
-}
+};

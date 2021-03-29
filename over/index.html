@@ -7,22 +7,51 @@
     <title>Home | JSLentertainment</title>
     <script src="/csi.min.js"></script>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/parallex.css">
 </head>
 <body>
-    <link rel="stylesheet" href="/parallex.css">
+    <div id="unsupported" style="display: none;">
+        <div class="grid">
+            <img src="/Chrome Icon.svg" alt="" class="browserIcon">
+            <img src="/Firefox Icon.svg" alt="" class="browserIcon">
+        </div>
+    </div>
 
-<div class="parallax">
-    <div class="titlebar">
-        <h1>JSLENTERTAINMENT</h1>
+    <div id="supported" class="parallax">
+        <div class="titlebar">
+            <h1>JSLENTERTAINMENT</h1>
+        </div>
+        <div class="menubar">
+            <button onclick="page('home')">Home</button>
+            <button onclick="page('over')">Over</button>
+        </div>
+        <div id="page">
+            <div data-include="/Pages/home.html"></div>
+        </div>
     </div>
-    <div class="menubar">
-        <button onclick="page('home')">Home</button>
-        <button onclick="page('over')">Over Mij</button>
-    </div>
-    <div id="page">
-        <div data-include="/Pages/home.html"></div>
-    </div>
-</div>
+
+    <script>
+        window.onload = userAgent();
+
+        function userAgent() {
+            let userAgentString = navigator.userAgent;
+            let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv:") > -1;
+
+            if (IExplorerAgent) {
+                document.getElementById('supported').style.display = 'none';
+                document.getElementById('unsupported').style.display = 'block';
+            } else {
+                setPage();
+            }
+        }
+        function ignore() {
+            document.getElementById('supported').style.display = 'block';
+            document.getElementById('unsupported').style.display = 'none';
+            setPage();
+        }
+
+
+    </script>
 
     <script src="/main.js"></script>
 </body>

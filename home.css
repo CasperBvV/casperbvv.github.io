@@ -14,10 +14,11 @@
     display: inline;
     vertical-align: middle;
 }
-
-.grid {
-    height: 100vh;
+.ab {
+    min-height: 100vh;
     background-color: white;
+}
+.ab > .grid {
     padding: 80px 0;
     padding-left: 5%;
 
@@ -30,21 +31,29 @@
     padding: 0;
 }
 .card > .img {
-    height: 150px;
-    background-color: red;
+    padding-top: 100%;
+}
+.card > .img:hover {
+    filter: brightness(.7) contrast(1.3);
 }
 .card > .text{
-    margin: 25px;
+    margin: 30px;
+    margin-bottom: 60px;
     background-color: black;
     color: white;
 }
 .card > .text > h1 {
     font-weight: normal;
 }
-
-.devider {
-    margin: 10px 0;
-    border-top: 1px solid white;
+.card > .text > button {
+    float: right;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+}
+.card > .text > button:hover, .card > .text > button:focus {
+    filter: brightness(.7);
+    outline: 0;
 }
 
 .parallax__layer--back {
