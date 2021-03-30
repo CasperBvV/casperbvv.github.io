@@ -10,52 +10,37 @@
     <link rel="stylesheet" href="/parallex.css">
 </head>
 <body>
-    <div id="loading" style="display: none;"></div>
+    <div id="loading"></div>
     <div id="unsupported">
-        <!--
-        <div class="grid">
-            <div style="grid-area: a;" class="Text"><h1>Browser Unsupported</h1></div>
-            <div style="grid-area: b;" class="browserIcon">
-                <a href="https://www.google.com/chrome/" target="_blank"><img src="/Chrome Icon.svg" alt=""><br>Download Chrome</a>
-            </div>
-            <div style="grid-area: c;" class="browserIcon">
-                <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img src="/Firefox Icon.svg" alt=""><br>Download Firefox</a>
-            </div>
-            <div style="grid-area: d;" class="browserIcon">
-                <a href="https://www.opera.com/download" target="_blank"><img src="/Opera Icon.svg" alt=""><br>Download Opera</a>
-            </div>
-            <div style="grid-area: e;" class="browserIcon">
-                <a onclick="window.open('microsoft-edge:' + window.location.href)"><img src="/Edge Icon.svg" alt=""><br>Open in Edge</a>
-            </div>
-
-        </div>
-        -->
         <div class="text">
             <h1>Browser wordt niet ondersteund</h1>
             <p>Uw huidige browser wordt mogelijk (nog) niet ondersteund, gebruik een van de onderstaande browser om er zeker van te zijn dat de website goed werkt.</p>
             <p>Gebruikt u een van de onderstaande browsers? Dan staat javascript mogelijk uitgeschakeld.</p>
-            <a onclick="ignore()" style="cursor: pointer;">Toch doorgaan</a>
+            <button onclick="ignore()" class="ignore">Toch doorgaan</button>
         </div>
-        <div class="browserIcon">
-            <a href="https://www.google.com/chrome/" target="_blank">
-                <div><img src="/Chrome Icon.svg" alt=""><br>Download Chrome</div>
-            </a>
+        <div class="buttons">
+            <div class="browserIcon" id='edge'>
+                <a href="microsoft-edge:http://90.145.175.20:5500/">
+                    <div><img src="/Edge-Icon.svg" alt="Edge Icon"><br>Open in Edge</div>
+                </a>
+            </div>
+            <div class="browserIcon">
+                <a href="https://www.google.com/chrome/" target="_blank">
+                    <div><img src="/Chrome-Icon.svg" alt="Chrome Icon"><br>Download Chrome</div>
+                </a>
+            </div>
+            <div class="browserIcon">
+                <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
+                    <div><img src="/Firefox-Icon.svg" alt="Firefox Icon"><br>Download Firefox</div>
+                </a>
+            </div>
+            <div class="browserIcon">
+                <a href="https://www.opera.com/download" target="_blank">
+                    <div><img src="/Opera-Icon.svg" alt="Opera Icon"><br>Download Opera</div>
+                </a>
+            </div>
         </div>
-        <div class="browserIcon">
-            <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
-                <div><img src="/Firefox Icon.svg" alt=""><br>Download Firefox</div>
-            </a>
-        </div>
-        <div class="browserIcon">
-            <a href="https://www.opera.com/download" target="_blank">
-                <div><img src="/Opera Icon.svg" alt=""><br>Download Opera</div>
-            </a>
-        </div>
-        <div class="browserIcon">
-            <a href="microsoft-edge:http://90.145.175.20:5500/">
-                <div><img src="/Edge Icon.svg" alt=""><br>Open in Edge</div>
-            </a>
-        </div>
+
 
     </div>
 
@@ -64,9 +49,9 @@
             <h1>JSLENTERTAINMENT</h1>
         </div>
         <div class="menubar">
-            <button onclick="page('home')">Home</button>
-            <button onclick="page('over')">Over</button>
+            <button onclick="page('home')">Home</button><button onclick="page('over')">Over</button>
         </div>
+        <div id="transition"></div>
         <div id="page">
             <div data-include="/Pages/home.html"></div>
         </div>
@@ -86,8 +71,9 @@
                 document.getElementById('unsupported').style.display = 'none';
                 setPage();
             }
-            /*
-            */
+            if (!navigator.platform.includes('Win')) {
+                document.getElementById('edge').style.display = 'none';
+            }
         }
         function ignore() {
             document.getElementById('supported').style.display = 'block';

@@ -8,11 +8,16 @@ window.onload = function() {
     document.getElementById('loading').style.opacity = '0';
     setTimeout(function() {
         document.getElementById('loading').style.display = 'none';
+        document.getElementById('loading').style.zIndex = '2'
     }, 500);
 };
 
 function page(doc) {
-    if (document.location.pathname != '/' + doc) {;
+    if (document.location.pathname != '/' + doc) {  
+        document.getElementById('transition').style.opacity = '1';
+        setTimeout(function() {
+            document.getElementById('transition').style.opacity = '0';
+        }, 500);
 
         window.history.pushState('', pages[doc] + ' | JSLentertainment', '/' + doc);
         

@@ -10,20 +10,46 @@
     <link rel="stylesheet" href="/parallex.css">
 </head>
 <body>
-    <div id="unsupported" style="display: none;">
-        <div class="grid">
-            <img src="/Chrome Icon.svg" alt="" class="browserIcon">
-            <img src="/Firefox Icon.svg" alt="" class="browserIcon">
+    <div id="loading" style="display: none;"></div>
+    <div id="unsupported">
+        <div class="text">
+            <h1>Browser wordt niet ondersteund</h1>
+            <p>Uw huidige browser wordt mogelijk (nog) niet ondersteund, gebruik een van de onderstaande browser om er zeker van te zijn dat de website goed werkt.</p>
+            <p>Gebruikt u een van de onderstaande browsers? Dan staat javascript mogelijk uitgeschakeld.</p>
+            <a onclick="ignore()" class="ignore"><div>Toch doorgaan</div></a>
         </div>
+        <div class="buttons">
+            <div class="browserIcon" id='edge'>
+                <a href="microsoft-edge:http://90.145.175.20:5500/">
+                    <div><img src="/Edge-Icon.svg" alt=""><br>Open in Edge</div>
+                </a>
+            </div>
+            <div class="browserIcon">
+                <a href="https://www.google.com/chrome/" target="_blank">
+                    <div><img src="/Chrome-Icon.svg" alt=""><br>Download Chrome</div>
+                </a>
+            </div>
+            <div class="browserIcon">
+                <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
+                    <div><img src="/Firefox-Icon.svg" alt=""><br>Download Firefox</div>
+                </a>
+            </div>
+            <div class="browserIcon">
+                <a href="https://www.opera.com/download" target="_blank">
+                    <div><img src="/Opera-Icon.svg" alt=""><br>Download Opera</div>
+                </a>
+            </div>
+        </div>
+
+
     </div>
 
-    <div id="supported" class="parallax">
+    <div id="supported" class="parallax" style="display: none;">
         <div class="titlebar">
             <h1>JSLENTERTAINMENT</h1>
         </div>
         <div class="menubar">
-            <button onclick="page('home')">Home</button>
-            <button onclick="page('over')">Over</button>
+            <button onclick="page('home')">Home</button><button onclick="page('over')">Over</button>
         </div>
         <div id="page">
             <div data-include="/Pages/home.html"></div>
@@ -31,17 +57,21 @@
     </div>
 
     <script>
-        window.onload = userAgent();
+        userAgent();
 
         function userAgent() {
             let userAgentString = navigator.userAgent;
             let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv:") > -1;
 
-            if (IExplorerAgent) {
-                document.getElementById('supported').style.display = 'none';
-                document.getElementById('unsupported').style.display = 'block';
-            } else {
+
+            
+            if (!IExplorerAgent) {
+                document.getElementById('supported').style.display = 'block';
+                document.getElementById('unsupported').style.display = 'none';
                 setPage();
+            }
+            if (!navigator.platform.includes('Win')) {
+                document.getElementById('edge').style.display = 'none';
             }
         }
         function ignore() {

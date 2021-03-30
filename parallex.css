@@ -6,14 +6,12 @@
 }
 
 .parallax__layer {
+    margin-top: 120px;
     margin-top: var(--totalbar-height);
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-}
-
-.parallax__layer--base {
-    transform: translateZ(0);
+    z-index: 1;
 }

@@ -1,5 +1,6 @@
 .background-section {
     text-align: center;
+    height: calc(100vh - 120px );
     height: calc(100vh - var(--totalbar-height) );
     background-color: rgba(0, 0, 0, .3);
     width: 100vw;
@@ -23,8 +24,12 @@
     padding-left: 5%;
 
     display: grid;
-    grid: auto / 30% 30% 30%;
+    display: -ms-grid;
+    grid: auto / min(500px, 30%) min(500px, 30%) min(500px, 30%);
+    -ms-grid: auto / 30% 30% 30%;
+    -ms-grid-gap: 2.5%;
     grid-gap: 2.5%;
+    margin: auto;
 }
 .card {
     background-color: black;
@@ -38,7 +43,6 @@
 }
 .card > .text{
     margin: 30px;
-    margin-bottom: 60px;
     background-color: black;
     color: white;
 }
@@ -57,14 +61,20 @@
 }
 
 .parallax__layer--back {
+    margin-top: calc(120px - 15px);
     margin-top: calc(var(--totalbar-height) - 15px);
     width: 100vw;
     transform: translateZ(-2px) scale(3);
+    -webkit-transform: translateZ(-2px) scale(3);
+    -webkit-transform: translateZ(-2px) scale(3);
+    z-index: 1;
 }
 
 .parallax__layer--back > img {
     min-width: 100vw;
     min-height: 100vh;
     margin-left: 50%;
+    transform: translateX(-50%);
+    transform: translateX(-50%);
     transform: translateX(-50%);
 }
