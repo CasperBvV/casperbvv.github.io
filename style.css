@@ -41,7 +41,7 @@ body {
     height: var(--menubar-height);
 }
 
-.menubar > button {
+.menubar > button, .menubar > a > button {
     color: inherit;
     height: 40px;
     margin: 5px 10px;
@@ -51,7 +51,7 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
-.menubar > button:hover {
+.menubar > button:hover, .menubar > a > button:hover {
     background-color: rgba(0, 0, 0, .1);
 }
 

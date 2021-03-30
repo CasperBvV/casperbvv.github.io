@@ -14,43 +14,45 @@ window.onload = function() {
 
 function page(doc) {
     if (document.location.pathname != '/' + doc) {  
+        //document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
         document.getElementById('transition').style.opacity = '1';
         setTimeout(function() {
+            window.history.pushState('', pages[doc] + ' | JSLentertainment', '/' + doc);
+        
+            document.title = pages[doc] + ' | JSLentertainment';
+            document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
+            setPage();
             document.getElementById('transition').style.opacity = '0';
         }, 500);
-
-        window.history.pushState('', pages[doc] + ' | JSLentertainment', '/' + doc);
-        
-        document.title = pages[doc] + ' | JSLentertainment';
-        document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
-        setPage()
-    
-
     }
 };
 
+function setupPage(doc) {
+    console.log(doc);
+    
+
+}
+
 window.onpopstate = function(event) {
     if(document.location.pathname.slice(-1) == '/') {
-        loc = document.location.pathname.slice(0, -1);
+        loc = document.location.pathname.slice(1, -1);
     } else {
-        loc = document.location.pathname;
-    }
+        loc = document.location.pathname.substring(1);
+    };
     if(loc == '') {
-        doc = '/home';
+        doc = 'home';
     } else {
         doc = loc;
-    }
-
+    };
     console.log(doc);
 
-    document.getElementById('page').style.opacity = '0';
-
-    setTimeout( function() {
-        document.getElementById("page").innerHTML = '<div data-include="/Pages' + doc + '.html"></div>'
-        setPage()
-    }, 500);
-
-    setTimeout( function() {
-        document.getElementById('page').style.opacity = 1;
+    //document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
+    document.getElementById('transition').style.opacity = '1';
+    setTimeout(function() {
+    
+        document.title = pages[doc] + ' | JSLentertainment';
+        document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
+        setPage();
+        document.getElementById('transition').style.opacity = '0';
     }, 500);
 };
