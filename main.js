@@ -14,7 +14,7 @@ window.onload = function() {
 
 function page(doc) {
     if (document.location.pathname != '/' + doc) {  
-        //document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
+        document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
         document.getElementById('transition').style.opacity = '1';
         setTimeout(function() {
             window.history.pushState('', pages[doc] + ' | JSLentertainment', '/' + doc);
@@ -46,7 +46,7 @@ window.onpopstate = function(event) {
     };
     console.log(doc);
 
-    //document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
+    document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
     document.getElementById('transition').style.opacity = '1';
     setTimeout(function() {
     
