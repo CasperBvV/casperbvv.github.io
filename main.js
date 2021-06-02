@@ -17,9 +17,9 @@ function page(doc) {
         document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
         document.getElementById('transition').style.opacity = '1';
         setTimeout(function() {
-            window.history.pushState('', pages[doc] + ' | JSLentertainment', '/' + doc);
+            window.history.pushState('', pages[doc] + ' | CBEntertainment', '/' + doc);
         
-            document.title = pages[doc] + ' | JSLentertainment';
+            document.title = pages[doc] + ' | CBEntertainment';
             document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
             setPage();
             document.getElementById('transition').style.opacity = '0';
@@ -50,7 +50,7 @@ window.onpopstate = function(event) {
     document.getElementById('transition').style.opacity = '1';
     setTimeout(function() {
     
-        document.title = pages[doc] + ' | JSLentertainment';
+        document.title = pages[doc] + ' | CBEntertainment';
         document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
         setPage();
         document.getElementById('transition').style.opacity = '0';

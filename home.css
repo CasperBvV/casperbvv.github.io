@@ -20,15 +20,14 @@
     background-color: white;
 }
 .ab > .grid {
-    padding: 80px 0;
-    padding-left: 5%;
+    padding: 80px 5%;
 
     display: grid;
     display: -ms-grid;
     grid: auto / min(500px, 30%) min(500px, 30%) min(500px, 30%);
     -ms-grid: auto / 30% 30% 30%;
-    -ms-grid-gap: 2.5%;
-    grid-gap: 2.5%;
+    -ms-grid-gap: 5%;
+    grid-gap: 5%;
     margin: auto;
 }
 .card {
