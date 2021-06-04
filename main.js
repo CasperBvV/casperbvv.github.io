@@ -13,8 +13,13 @@ window.onload = function() {
 };
 
 function page(doc) {
-    if (document.location.pathname != '/' + doc) {  
+    console.log(doc)
+    if (document.location.pathname == '/' + doc || (document.location.pathname == '/' && doc == 'home') ) {
+        console.log('Blocked')
+    } else {
         document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
+
+        document.getElementById('transition').style.visibility = 'visible';
         document.getElementById('transition').style.opacity = '1';
         setTimeout(function() {
             window.history.pushState('', pages[doc] + ' | CBEntertainment', '/' + doc);
@@ -22,6 +27,8 @@ function page(doc) {
             document.title = pages[doc] + ' | CBEntertainment';
             document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
             setPage();
+
+            document.getElementById('transition').style.visibility = 'hidden';
             document.getElementById('transition').style.opacity = '0';
         }, 500);
     }
@@ -47,12 +54,15 @@ window.onpopstate = function(event) {
     console.log(doc);
 
     document.getElementById('supported').scrollTo({top: 0, behavior: 'smooth'});
+
+    document.getElementById('transition').style.visibility = 'visible';
     document.getElementById('transition').style.opacity = '1';
     setTimeout(function() {
-    
         document.title = pages[doc] + ' | CBEntertainment';
         document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
         setPage();
+
+        document.getElementById('transition').style.visibility = 'hidden';
         document.getElementById('transition').style.opacity = '0';
     }, 500);
 };
