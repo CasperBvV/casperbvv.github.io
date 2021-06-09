@@ -6,7 +6,15 @@
     display: grid;
     
     grid-template:
-    "text home" 1fr / min-content 1fr;
+        "text"
+        "home";
+    grid-gap: 15px;
+}
+@media screen and (min-width: 1000px) {
+    .grid {
+        grid-template: "text home" 1fr / min-content 1fr;
+        grid-gap: 0;
+    }
 }
 .grid > div {
     grid-area: text;
