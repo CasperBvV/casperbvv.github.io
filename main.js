@@ -1,6 +1,7 @@
 var pages = [];
 pages['home'] = 'Home';
 pages['over'] = 'Over';
+pages['reflectie'] = 'Reflecite';
 
 document.getElementById('loading').style.display = 'block';
 window.onload = function() {

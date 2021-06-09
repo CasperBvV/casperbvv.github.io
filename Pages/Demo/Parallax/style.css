@@ -1,0 +1,57 @@
+.background-section {
+    text-align: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+}
+.background-section > div {
+    font-weight: bold;
+    font-size: min(10vw, 30px);
+    color: white;
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+}
+.ab {
+    min-height: 100vh;
+    background-color: lightgray;
+    overflow: hidden;
+}
+.parallax__layer--back {
+    width: 100vw;
+    transform: translateZ(-2px) scale(3);
+    -webkit-transform: translateZ(-2px) scale(3);
+    -webkit-transform: translateZ(-2px) scale(3);
+    z-index: 1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax__layer--back > img {
+    min-width: 100vw;
+    min-height: 100vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+
+
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
