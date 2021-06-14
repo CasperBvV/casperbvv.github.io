@@ -23,9 +23,9 @@ function page(doc) {
         document.getElementById('transition').style.visibility = 'visible';
         document.getElementById('transition').style.opacity = '1';
         setTimeout(function() {
-            window.history.pushState('', pages[doc] + ' | CBEntertainment', '/' + doc);
+            window.history.pushState('', pages[doc] + ' | CB-Entertainment', '/' + doc);
         
-            document.title = pages[doc] + ' | CBEntertainment';
+            document.title = pages[doc] + ' | CB-Entertainment';
             document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
             setPage();
 
@@ -59,7 +59,7 @@ window.onpopstate = function(event) {
     document.getElementById('transition').style.visibility = 'visible';
     document.getElementById('transition').style.opacity = '1';
     setTimeout(function() {
-        document.title = pages[doc] + ' | CBEntertainment';
+        document.title = pages[doc] + ' | CB-Entertainment';
         document.getElementById("page").innerHTML = '<div data-include="/Pages/' + doc + '.html"></div>';
         setPage();
 

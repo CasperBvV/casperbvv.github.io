@@ -1,6 +1,10 @@
 .parallax__layer {
     padding: 50px 15% 0;
 }
+.parallax__layer > p:last-child {
+    padding-bottom: 25px;
+    overflow: hidden;
+}
 
 .grid {
     display: grid;
