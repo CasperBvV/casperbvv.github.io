@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | CB-Entertainment</title>
+    <title>Over | CB-Entertainment</title>
     <link rel="icon" href="/CB-Entertainment.svg">
     <script src="/csi.min.js"></script>
     <link rel="stylesheet" href="/style.css">
@@ -30,11 +30,15 @@
                     <div><img src="/Chrome-Icon.svg" alt="Chrome Icon"><br>Download Chrome</div>
                 </a>
             </div>
+            <!--
+                
             <div class="browserIcon">
                 <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
                     <div><img src="/Firefox-Icon.svg" alt="Firefox Icon"><br>Download Firefox</div>
                 </a>
             </div>
+
+            -->
             <div class="browserIcon">
                 <a href="https://www.opera.com/download" target="_blank">
                     <div><img src="/Opera-Icon.svg" alt="Opera Icon"><br>Download Opera</div>
@@ -50,7 +54,7 @@
             <h1>CB-Entertainment</h1>
         </div>
         <div class="menubar">
-            <button onclick="page('home')">Home</button><button onclick="page('over')">Over</button><a href="test2.html"><button>Test</button></a>
+            <button onclick="page('home')">Home</button><button onclick="page('over')">Over</button><button onclick="page('reflectie')">Reflectie</button>
         </div>
         <div id="transition"></div>
         <div id="page">
@@ -64,9 +68,9 @@
         function userAgent() {
             let userAgentString = navigator.userAgent;
             let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv:") > -1;
-			let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
-            if ((firefoxAgent) && (IExplorerAgent))
-                IExplorerAgent = false;
+			//let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+            //if ((firefoxAgent) && (IExplorerAgent))
+            //    IExplorerAgent = false;
 
 
             
